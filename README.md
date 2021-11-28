@@ -308,6 +308,8 @@ Some strange but important config fields.
 </property>
 ```
 
+![image](https://user-images.githubusercontent.com/69847727/143784504-45f1828f-fbbc-4576-be80-c7e10043d379.png)
+
 ```xml
 <property>
 	<name>yarn.nodemanager.aux-services</name>
@@ -385,6 +387,8 @@ Information about datanodes
 ```
 hdfs dfsadmin -report
 ```
+![image](https://user-images.githubusercontent.com/69847727/143784445-56663648-7fea-4b8e-97c1-8f3aa232ce6b.png)
+
 
 Stop hadoop file system.
 
@@ -415,6 +419,8 @@ List all nodes in YARN in all states.
 ```
 yarn node -list -all
 ```
+![image](https://user-images.githubusercontent.com/69847727/143784432-714dc67c-9960-433d-b7f3-67b44b0d976e.png)
+
 
 **Order**
 
@@ -443,3 +449,62 @@ Spark job for the assignment.
 ```
 spark-submit --master yarn spark-recommendation_2.12-3.2.0_1.0.jar hdfs://roma:9000/user/hadoop/files -user true
 ```
+
+## Results
+
+**The system works correctly both on the local Hadoop cluster and on the Private Network Hadoop cluster**
+Here the movie recommendation system's example of output:
+
+```xml
+Movie                                                   | Index
+--------------------------------------------------------|--------------------------------------------------------------------
+Twilight (2008)                                         |8.044078222166666
+Om Shanti Om (2007)                                     |7.957910635685204
+Tracey Fragments, The (2007)                            |7.834045418517325
+Beauty and the Bastard (Tyttö sinä olet tähti) (2005)   |7.692157305866834
+Twilight Saga: Breaking Dawn - Part 2, The (2012)       |7.565078935400862
+Twilight Saga: Eclipse, The (2010)               	|7.499100136439937
+Hav Plenty (1997)               			|7.485961814981529
+Twilight Saga: New Moon, The (2009)             	|7.317487277492542
+Sweet Nothing (1996)            			|7.270011924082028
+Twilight Saga: Breaking Dawn - Part 1, The (2011)       |7.224499331625905
+Boys Don't Cry (Chlopaki nie placza) (2000)             |7.1108298527268285
+Man's Job (Miehen työ) (2007)           		|6.948141601243929
+For the Moment (1994)           			|6.692121242253773
+Expelled: No Intelligence Allowed (2008)                |6.675079740325394
+Collapse (2009)         				|6.656899751837235
+Frank and Ollie (1995)          			|6.469878687838555
+Jump Tomorrow (2001)            			|6.3356285061956115
+Big Bang Theory, The (2007-)            		|6.289137893006393
+Roll Bounce (2005)              			|6.269551702720389
+United 93 (2006)                			|6.210990904798921
+
+Error after training: 0.797378165762901
+Baseline error: 0.9394505454302877
+
+(local cluster with rank = 20)
+```
+
+## Analisys
+**In this part we tried different ranks and checked how errors was changing**
+
+```xml
+rank 10 = Error after training: 0.7623745639126164
+Baseline error: 0.9395930856067447
+
+rank 20 = Error after training: 0.6953836128039833
+Baseline error: 0.9395316247597332
+
+rank 50 = Error after training: 0.7386361280398333
+Baseline error: 0.9390870344101426
+
+rank 100 = Error after training: 0.805983612803983
+Baseline error: 0.940003462475963
+```
+
+We can conclude that the baseline error almostly did not change while test error differs from case to case.  
+It is difficult to determine the boundaries of a "good" rank, but, according to the results, we can say that the model with rank <=20 underfits and the model with a rank >= 50 overfits. 
+
+## Conclusion
+We have completed the implementation of the movie recommendation system, tested the model on a local Hadoop cluster and on Private Network Hadoop cluster. 
+We also identified the most suitable configurations of a model to minimize the test error.
