@@ -20,7 +20,27 @@ The system contains a model trained on a dataset of graded movies and predicts (
 The report describes our solution, results, analysis, difficulties encountered and alternative ways to implement.
 
 
-## 
+## Project hierarchy
+```xml
+spark-recommendation-system  
+├── build.sbt  
+├── user_rating.tsv  
+├── user_ratings.tsv 
+├── rating2.csv 
+├── movie2.csv 
+└── src  
+    └── scala
+          ├── Grader.scala  
+          └── MovieLensALS.scala  
+```
+
+* `build.sbt` contains build configuration and dependencies.
+* `user_ratings.tsv` this file is used for collecting user ratings.
+* `user_rating.tsv` must be created for saving preferences and cannot be empty.
+* `rating2.csv` and `movie2.csv` are datasets which are too large for storage in the repository. Please, dowload them from [here](https://www.dropbox.com/sh/y5uck2kbzizaes6/AACpapXw-JMmLJB_xCGOZOFCa?dl=0).
+* `Grader.scala` for reading user preferences.
+* `MovieLensALS.scala` contains main class for training recommendation system.
+
 
 ## Description of the work done
 
