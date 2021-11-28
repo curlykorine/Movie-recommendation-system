@@ -27,12 +27,11 @@ spark-recommendation-system
 ├── build.sbt  
 ├── user_rating.tsv  
 ├── user_ratings.tsv 
-├── rating2.csv 
-├── movie2.csv 
+├── rating2.csv *
+├── movie2.csv *
 └── src  
-    └── scala
-          ├── Grader.scala  
-          └── MovieLensALS.scala  
+    ├── Grader.scala  
+    └── MovieLensALS.scala  
 ```
 
 * `build.sbt` contains build configuration and dependencies.
