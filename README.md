@@ -32,6 +32,7 @@ The report describes our solution, results, analysis, difficulties encountered a
 ## Project hierarchy
 ```xml
 spark-recommendation-system  
+├── configs.zip *  
 ├── build.sbt  
 ├── user_rating.tsv  
 ├── user_ratings.tsv 
@@ -42,6 +43,7 @@ spark-recommendation-system
     └── MovieLensALS.scala  
 ```
 
+* `configs.zip` contains configs for clustering.  
 * `build.sbt` contains build configuration and dependencies.
 * `user_ratings.tsv` this file is used for collecting user ratings.
 * `user_rating.tsv` must be created for saving preferences and cannot be empty.
