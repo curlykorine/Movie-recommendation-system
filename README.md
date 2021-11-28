@@ -1,4 +1,5 @@
-# **Movie recommendation system, Skappa team**
+# **Movie recommendation system,  
+Skappa team**
 
  **Scala programming:**   
  Evgeniy Lutanin, *y.lutanin@innopolis.university*  
