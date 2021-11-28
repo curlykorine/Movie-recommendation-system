@@ -1,5 +1,4 @@
-# **Movie recommendation system,  
-Skappa team**
+# **Movie recommendation system**
 
  **Scala programming:**   
  Evgeniy Lutanin, *y.lutanin@innopolis.university*  
@@ -10,9 +9,10 @@ Skappa team**
  **Report composing:**  
  Karina Singatullina, *k.singatullina@innopolis.university*  
  
-Introduction to Big Data,  
+*Introduction to Big Data,  
 BS19-DS-01, BS19-AAI-01,  
-2021
+**Skappa team**,  
+2021*
 
 
 ## Introduction
